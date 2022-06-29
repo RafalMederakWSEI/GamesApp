@@ -67,8 +67,29 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\GamesList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\AddGame.xaml.cs">
+      <DependentUpon>AddGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\GamesList.xaml.cs">
+      <DependentUpon>GamesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -93,6 +114,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\logo.png" />
+    <Content Include="Assets\main-logo.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GamesApp
+namespace GamesApp.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Home.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Home : Page
     {
-        public MainWindow()
+        public Home()
         {
             InitializeComponent();
-        }
-
-        private void BtnClickGamesList(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Pages.GamesList();
-        }
-
-        private void BtnClickAddGame(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Pages.AddGame();
         }
     }
 }
