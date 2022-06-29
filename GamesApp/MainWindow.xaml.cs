@@ -22,7 +22,14 @@ namespace GamesApp
     {
         public MainWindow()
         {
-            InitializeComponent();
+           InitializeComponent();
+
+           Main.Content = new Pages.Home();
+        }
+
+        private void BtnClickHome(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Pages.Home();
         }
 
         private void BtnClickGamesList(object sender, RoutedEventArgs e)
