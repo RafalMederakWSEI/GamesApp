@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WypozyczalniaGierModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Gra">
+          <Key>
+            <PropertyRef Name="id_gry" />
+          </Key>
+          <Property Name="id_gry" Type="int" Nullable="false" />
+          <Property Name="nazwa_gry" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="producent" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="kategoria_wiekowa_PEGI" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="typ_gry" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cena" Type="money" Nullable="false" />
+          <Property Name="platforma" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Klient">
+          <Key>
+            <PropertyRef Name="id_klienta" />
+          </Key>
+          <Property Name="id_klienta" Type="int" Nullable="false" />
+          <Property Name="imie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nazwisko" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nr_kontaktowy" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="pesel" Type="varchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sklep">
+          <Key>
+            <PropertyRef Name="id_sklepu" />
+          </Key>
+          <Property Name="id_sklepu" Type="int" Nullable="false" />
+          <Property Name="nazwa_sklepu" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sposob_zakupu" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sprzedawca">
+          <Key>
+            <PropertyRef Name="id_sprzedawcy" />
+          </Key>
+          <Property Name="id_sprzedawcy" Type="int" Nullable="false" />
+          <Property Name="imie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nazwisko" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_sklepu" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Sprzedawc__id_sk__286302EC">
+          <End Role="Sklep" Type="Self.Sklep" Multiplicity="1" />
+          <End Role="Sprzedawca" Type="Self.Sprzedawca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklep">
+              <PropertyRef Name="id_sklepu" />
+            </Principal>
+            <Dependent Role="Sprzedawca">
+              <PropertyRef Name="id_sklepu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WypozyczalniaGierModelStoreContainer">
+          <EntitySet Name="Gra" EntityType="Self.Gra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Klient" EntityType="Self.Klient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sklep" EntityType="Self.Sklep" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sprzedawca" EntityType="Self.Sprzedawca" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Sprzedawc__id_sk__286302EC" Association="Self.FK__Sprzedawc__id_sk__286302EC">
+            <End Role="Sklep" EntitySet="Sklep" />
+            <End Role="Sprzedawca" EntitySet="Sprzedawca" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WypozyczalniaGierModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Gra">
+          <Key>
+            <PropertyRef Name="id_gry" />
+          </Key>
+          <Property Name="id_gry" Type="Int32" Nullable="false" />
+          <Property Name="nazwa_gry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="producent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="kategoria_wiekowa_PEGI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="typ_gry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cena" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="platforma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Klient">
+          <Key>
+            <PropertyRef Name="id_klienta" />
+          </Key>
+          <Property Name="id_klienta" Type="Int32" Nullable="false" />
+          <Property Name="imie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nr_kontaktowy" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pesel" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sklep">
+          <Key>
+            <PropertyRef Name="id_sklepu" />
+          </Key>
+          <Property Name="id_sklepu" Type="Int32" Nullable="false" />
+          <Property Name="nazwa_sklepu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sposob_zakupu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Sprzedawcas" Relationship="Self.FK__Sprzedawc__id_sk__286302EC" FromRole="Sklep" ToRole="Sprzedawca" />
+        </EntityType>
+        <EntityType Name="Sprzedawca">
+          <Key>
+            <PropertyRef Name="id_sprzedawcy" />
+          </Key>
+          <Property Name="id_sprzedawcy" Type="Int32" Nullable="false" />
+          <Property Name="imie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_sklepu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sklep" Relationship="Self.FK__Sprzedawc__id_sk__286302EC" FromRole="Sprzedawca" ToRole="Sklep" />
+        </EntityType>
+        <Association Name="FK__Sprzedawc__id_sk__286302EC">
+          <End Role="Sklep" Type="Self.Sklep" Multiplicity="1" />
+          <End Role="Sprzedawca" Type="Self.Sprzedawca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sklep">
+              <PropertyRef Name="id_sklepu" />
+            </Principal>
+            <Dependent Role="Sprzedawca">
+              <PropertyRef Name="id_sklepu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WypozyczalniaGierEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Gras" EntityType="Self.Gra" />
+          <EntitySet Name="Klients" EntityType="Self.Klient" />
+          <EntitySet Name="Skleps" EntityType="Self.Sklep" />
+          <EntitySet Name="Sprzedawcas" EntityType="Self.Sprzedawca" />
+          <AssociationSet Name="FK__Sprzedawc__id_sk__286302EC" Association="Self.FK__Sprzedawc__id_sk__286302EC">
+            <End Role="Sklep" EntitySet="Skleps" />
+            <End Role="Sprzedawca" EntitySet="Sprzedawcas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WypozyczalniaGierModelStoreContainer" CdmEntityContainer="WypozyczalniaGierEntities">
+          <EntitySetMapping Name="Gras">
+            <EntityTypeMapping TypeName="WypozyczalniaGierModel.Gra">
+              <MappingFragment StoreEntitySet="Gra">
+                <ScalarProperty Name="id_gry" ColumnName="id_gry" />
+                <ScalarProperty Name="nazwa_gry" ColumnName="nazwa_gry" />
+                <ScalarProperty Name="producent" ColumnName="producent" />
+                <ScalarProperty Name="kategoria_wiekowa_PEGI" ColumnName="kategoria_wiekowa_PEGI" />
+                <ScalarProperty Name="typ_gry" ColumnName="typ_gry" />
+                <ScalarProperty Name="cena" ColumnName="cena" />
+                <ScalarProperty Name="platforma" ColumnName="platforma" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Klients">
+            <EntityTypeMapping TypeName="WypozyczalniaGierModel.Klient">
+              <MappingFragment StoreEntitySet="Klient">
+                <ScalarProperty Name="id_klienta" ColumnName="id_klienta" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="nr_kontaktowy" ColumnName="nr_kontaktowy" />
+                <ScalarProperty Name="pesel" ColumnName="pesel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skleps">
+            <EntityTypeMapping TypeName="WypozyczalniaGierModel.Sklep">
+              <MappingFragment StoreEntitySet="Sklep">
+                <ScalarProperty Name="id_sklepu" ColumnName="id_sklepu" />
+                <ScalarProperty Name="nazwa_sklepu" ColumnName="nazwa_sklepu" />
+                <ScalarProperty Name="sposob_zakupu" ColumnName="sposob_zakupu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sprzedawcas">
+            <EntityTypeMapping TypeName="WypozyczalniaGierModel.Sprzedawca">
+              <MappingFragment StoreEntitySet="Sprzedawca">
+                <ScalarProperty Name="id_sprzedawcy" ColumnName="id_sprzedawcy" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="id_sklepu" ColumnName="id_sklepu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
