@@ -23,6 +23,11 @@ namespace GamesApp.Pages
         public GamesList()
         {
             InitializeComponent();
+
+            WypozyczalniaGierEntities db = new WypozyczalniaGierEntities();
+            var docs = from d in db.Gras select d;
+
+            gridGames.ItemsSource = docs.ToList();
         }
     }
 }
