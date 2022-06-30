@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GamesApp.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="840"
+      d:DesignHeight="660" d:DesignWidth="840"
       Title="GamesList">
 
     <Grid Background="#fff" >

@@ -24,5 +24,30 @@ namespace GamesApp.Pages
         {
             InitializeComponent();
         }
+
+        private void txtGameId_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            WypozyczalniaGierEntities db = new WypozyczalniaGierEntities();
+
+            Gra gameObject = new Gra()
+            {
+                id_gry = Convert.ToInt32(txtGameId.Text),
+                nazwa_gry = txtGameName.Text,
+                producent = txtGameProducent.Text,
+                kategoria_wiekowa_PEGI = txtGameAgeCategory.Text,
+                typ_gry = txtGameType.Text,
+                cena = Convert.ToDecimal(txtGamePrice.Text),
+                platforma = txtGamePlatform.Text,
+            };
+
+            db.Gras.Add(gameObject);
+            db.SaveChanges();
+
+        }
     }
 }
