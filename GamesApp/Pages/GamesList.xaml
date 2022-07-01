@@ -9,7 +9,22 @@
       Title="GamesList">
 
     <Grid Background="#fff" >
-        <Label FontFamily="Poppins" FontSize="26" FontWeight="SemiBold" Margin="25,10,0,0">Games List</Label>
-        <DataGrid BorderThickness="1,1,1,0" BorderBrush="#000" Background="#fff" FontFamily="Poppins" x:Name="gridGames" HorizontalAlignment="Stretch" MaxHeight="340" Margin="25,80,25,0" VerticalAlignment="Top"/>
+        <Label VerticalAlignment="Top" FontFamily="Poppins" FontSize="26" FontWeight="SemiBold" Margin="25,10,0,0">Games List</Label>
+        <DataGrid BorderThickness="1,1,1,0" BorderBrush="#000" Background="#fff" FontFamily="Poppins" x:Name="gridGames" HorizontalAlignment="Stretch" MaxHeight="320" Margin="25,80,25,0" VerticalAlignment="Top" SelectionChanged="gridGames_SelectionChanged"/>
+        <Label FontSize="14" Content="Id gry" FontFamily="Poppins" HorizontalAlignment="Left" Margin="30,438,0,0" VerticalAlignment="Top" Height="30" Width="91"/>
+        <TextBox FontSize="14" x:Name="txtGameIdUpdate" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="30" Margin="126,438,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180" />
+        <Label FontSize="14" Content="Nazwa gry" FontFamily="Poppins" HorizontalAlignment="Left" Margin="323,438,0,0" VerticalAlignment="Top" Height="30" Width="192"/>
+        <TextBox FontSize="14" x:Name="txtGameNameUpdate" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="30" Margin="520,438,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180" />
+        <Label FontSize="14" Content="Producent" FontFamily="Poppins" HorizontalAlignment="Left" Margin="26,488,0,0" VerticalAlignment="Top" Height="30" Width="95"/>
+        <TextBox FontSize="14" x:Name="txtGameProducentUpdate" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="30" Margin="126,488,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180" />
+        <Label FontSize="14" Content="Kategoria wiekowa PEGI" FontFamily="Poppins" HorizontalAlignment="Left" Margin="323,488,0,0" VerticalAlignment="Top" Height="30" Width="192"/>
+        <TextBox FontSize="14" x:Name="txtGameAgeCategoryUpdate" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="30" Margin="520,488,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180" />
+        <Label FontSize="14" Content="Typ gry" FontFamily="Poppins" HorizontalAlignment="Left" Margin="25,537,0,0" VerticalAlignment="Top" Height="30" Width="96"/>
+        <TextBox FontSize="14" x:Name="txtGameTypeUpdate" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="30" Margin="126,537,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.426,-2.083"/>
+        <Label FontSize="14" Content="Cena" FontFamily="Poppins" HorizontalAlignment="Left" Margin="323,537,0,0" VerticalAlignment="Top" Height="30" Width="192"/>
+        <TextBox FontSize="14" x:Name="txtGamePriceUpdate" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="30" Margin="520,537,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180"/>
+        <Label FontSize="14" Content="Platforma" FontFamily="Poppins" HorizontalAlignment="Left" Margin="25,583,0,0" VerticalAlignment="Top" Height="30" Width="96"/>
+        <TextBox FontSize="14" x:Name="txtGamePlatformUpdate" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="30" Margin="126,584,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180"/>
+        <Button Background="#fff" FontSize="14" x:Name="btnUpdate" FontFamily="Poppins" Content="Zaktualizuj" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="583,603,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="btnUpdate_Click"/>
     </Grid>
 </Page>
