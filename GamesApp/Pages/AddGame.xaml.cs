@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity.Infrastructure;
 
 namespace GamesApp.Pages
 {
@@ -57,7 +58,11 @@ namespace GamesApp.Pages
             catch(FormatException)
             {
                 MessageBox.Show("Invalid Data", "Input", MessageBoxButton.OK, MessageBoxImage.Error);
-            }                   
+            }        
+            catch (DbUpdateException)
+            {
+                MessageBox.Show("Invalid Data", "Input", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
