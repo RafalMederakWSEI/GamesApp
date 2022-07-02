@@ -25,11 +25,6 @@ namespace GamesApp.Pages
             InitializeComponent();
         }
 
-        private void txtGameId_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             WypozyczalniaGierEntities db = new WypozyczalniaGierEntities();
@@ -47,7 +42,7 @@ namespace GamesApp.Pages
 
             db.Gras.Add(gameObject);
             db.SaveChanges();
-
+            MessageBox.Show("Dodano grę");
         }
     }
 }

@@ -72,6 +72,9 @@ namespace GamesApp.Pages
             }
 
             db.SaveChanges();
+
+            MessageBox.Show("Zaktualizowano grę");
+
             LoadGames();
         }
 
