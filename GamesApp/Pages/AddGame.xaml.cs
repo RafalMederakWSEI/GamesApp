@@ -29,20 +29,35 @@ namespace GamesApp.Pages
         {
             WypozyczalniaGierEntities db = new WypozyczalniaGierEntities();
 
-            Gra gameObject = new Gra()
+            Gra gameObject;
+            try
             {
-                id_gry = Convert.ToInt32(txtGameId.Text),
-                nazwa_gry = txtGameName.Text,
-                producent = txtGameProducent.Text,
-                kategoria_wiekowa_PEGI = txtGameAgeCategory.Text,
-                typ_gry = txtGameType.Text,
-                cena = Convert.ToDecimal(txtGamePrice.Text),
-                platforma = txtGamePlatform.Text,
-            };
+                gameObject = new Gra()
+                {
+                    id_gry = Convert.ToInt32(txtGameId.Text),
+                    nazwa_gry = txtGameName.Text,
+                    producent = txtGameProducent.Text,
+                    kategoria_wiekowa_PEGI = txtGameAgeCategory.Text,
+                    typ_gry = txtGameType.Text,
+                    cena = Convert.ToDecimal(txtGamePrice.Text),
+                    platforma = txtGamePlatform.Text,
+                };
+                db.Gras.Add(gameObject);
+                db.SaveChanges();
+                MessageBox.Show("The game has been added.");
 
-            db.Gras.Add(gameObject);
-            db.SaveChanges();
-            MessageBox.Show("Dodano grę");
+                txtGameId.Text = "";
+                txtGameName.Text = "";
+                txtGameProducent.Text = "";
+                txtGameAgeCategory.Text = "";
+                txtGameType.Text = "";
+                txtGamePrice.Text = "";
+                txtGamePlatform.Text = "";
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Invalid Data", "Input", MessageBoxButton.OK, MessageBoxImage.Error);
+            }                   
         }
     }
 }

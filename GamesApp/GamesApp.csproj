@@ -182,6 +182,7 @@
     <Resource Include="Assets\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\nav_logo-white.png" />
     <Resource Include="Assets\add-game.png" />
     <Content Include="GamesDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

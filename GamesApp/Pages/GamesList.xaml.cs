@@ -73,7 +73,7 @@ namespace GamesApp.Pages
 
             db.SaveChanges();
 
-            MessageBox.Show("Zaktualizowano grę");
+            MessageBox.Show("The game has been updated.");
 
             LoadGames();
         }
@@ -88,7 +88,7 @@ namespace GamesApp.Pages
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult messageBoxResult =  MessageBox.Show("Czy na pewno chcesz usunąć grę?", "Delete game",MessageBoxButton.YesNo, MessageBoxImage.Warning,MessageBoxResult.No);
+            MessageBoxResult messageBoxResult =  MessageBox.Show("Are you sure that you want to remove game?", "Delete game",MessageBoxButton.YesNo, MessageBoxImage.Warning,MessageBoxResult.No);
 
             if(messageBoxResult == MessageBoxResult.Yes)
             {
