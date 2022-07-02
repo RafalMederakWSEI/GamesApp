@@ -46,7 +46,7 @@ namespace GamesApp.Pages
                         txtGameTypeUpdate.Text = g.typ_gry;
                         txtGamePriceUpdate.Text = Convert.ToString(g.cena);
                         txtGamePlatformUpdate.Text = g.platforma;
-                        updatingDoctorID = g.id_gry;
+                        updatingGameID = g.id_gry;
                     }
                 }
             }               
@@ -56,7 +56,7 @@ namespace GamesApp.Pages
         {
             WypozyczalniaGierEntities db = new WypozyczalniaGierEntities();
 
-            var result = from g in db.Gras where g.id_gry == updatingDoctorID select g;
+            var result = from g in db.Gras where g.id_gry == updatingGameID select g;
 
             Gra game = result.SingleOrDefault();
 
@@ -75,12 +75,35 @@ namespace GamesApp.Pages
             LoadGames();
         }
 
-        private int updatingDoctorID = 0;
+        private int updatingGameID = 0;
 
         private void LoadGames()
         {
             WypozyczalniaGierEntities db = new WypozyczalniaGierEntities();
             gridGames.ItemsSource = db.Gras.ToList();
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult =  MessageBox.Show("Czy na pewno chcesz usunąć grę?", "Delete game",MessageBoxButton.YesNo, MessageBoxImage.Warning,MessageBoxResult.No);
+
+            if(messageBoxResult == MessageBoxResult.Yes)
+            {
+
+                WypozyczalniaGierEntities db = new WypozyczalniaGierEntities();
+
+                var result = from g in db.Gras where g.id_gry == updatingGameID select g;
+
+                Gra game = result.SingleOrDefault();
+
+                if (game != null)
+                {
+                    db.Gras.Remove(game);
+                    db.SaveChanges();
+                }
+
+                LoadGames();
+            }
         }
     }
 }
