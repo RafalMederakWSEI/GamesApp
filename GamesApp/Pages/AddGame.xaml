@@ -11,20 +11,20 @@
     <Grid Background="#fff">
         <Label VerticalAlignment="Top" FontFamily="Poppins" FontSize="26" FontWeight="SemiBold" Margin="25,10,0,0">Add game</Label>
         <Label FontSize="18" Content="Id gry" FontFamily="Poppins" HorizontalAlignment="Left" Margin="25,85,0,0" VerticalAlignment="Top" Height="40"/>
-        <TextBox FontSize="18" x:Name="txtGameId" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" TextChanged="txtGameId_TextChanged"/>
+        <TextBox FontSize="18" x:Name="txtGameId" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" />
         <Label FontSize="18" Content="Nazwa gry" FontFamily="Poppins" HorizontalAlignment="Left" Margin="25,144,0,0" VerticalAlignment="Top" Height="40"/>
-        <TextBox FontSize="18" x:Name="txtGameName" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,144,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" TextChanged="txtGameId_TextChanged"/>
+        <TextBox FontSize="18" x:Name="txtGameName" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,144,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" />
         <Label FontSize="18" Content="Producent" FontFamily="Poppins" HorizontalAlignment="Left" Margin="25,204,0,0" VerticalAlignment="Top" Height="40"/>
-        <TextBox FontSize="18" x:Name="txtGameProducent" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,204,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" TextChanged="txtGameId_TextChanged"/>
+        <TextBox FontSize="18" x:Name="txtGameProducent" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,204,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" />
         <Label FontSize="18" Content="Kategoria wiekowa PEGI" FontFamily="Poppins" HorizontalAlignment="Left" Margin="25,263,0,0" VerticalAlignment="Top" Height="40"/>
-        <TextBox FontSize="18" x:Name="txtGameAgeCategory" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,263,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" TextChanged="txtGameId_TextChanged"/>
+        <TextBox FontSize="18" x:Name="txtGameAgeCategory" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,263,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" />
         <Label FontSize="18" Content="Typ gry" FontFamily="Poppins" HorizontalAlignment="Left" Margin="25,321,0,0" VerticalAlignment="Top" Height="40"/>
-        <TextBox FontSize="18" x:Name="txtGameType" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,321,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" TextChanged="txtGameId_TextChanged"/>
+        <TextBox FontSize="18" x:Name="txtGameType" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,321,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" />
         <Label FontSize="18" Content="Cena" FontFamily="Poppins" HorizontalAlignment="Left" Margin="25,380,0,0" VerticalAlignment="Top" Height="40"/>
-        <TextBox FontSize="18" x:Name="txtGamePrice" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,380,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" TextChanged="txtGameId_TextChanged"/>
+        <TextBox FontSize="18" x:Name="txtGamePrice" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,380,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" />
         <Label FontSize="18" Content="Platforma" FontFamily="Poppins" HorizontalAlignment="Left" Margin="25,441,0,0" VerticalAlignment="Top" Height="40"/>
-        <TextBox FontSize="18" x:Name="txtGamePlatform" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,441,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190" TextChanged="txtGameId_TextChanged"/>
-        <Button Background="#fff" FontSize="18" x:Name="btnAdd" FontFamily="Poppins" Content="Zatwierdź" HorizontalAlignment="Left" Margin="286,579,0,0" VerticalAlignment="Top" Width="175" Height="48" Click="btnAdd_Click"/>
+        <TextBox FontSize="18" x:Name="txtGamePlatform" VerticalContentAlignment="Center" FontFamily="Poppins" HorizontalAlignment="Left" Height="40" Margin="271,441,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="190"/>
+        <Button Background="#fff" FontSize="18" x:Name="btnAdd" FontFamily="Poppins" Content="Apply" HorizontalAlignment="Left" Margin="286,579,0,0" VerticalAlignment="Top" Width="175" Height="48" Click="btnAdd_Click"/>
         <Image VerticalAlignment="Top" Source="/Assets/add-game.png" Width="280" Margin="535,85,25,0" Height="396"/> 
     </Grid>
 </Page>
